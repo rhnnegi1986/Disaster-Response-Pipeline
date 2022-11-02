@@ -11,7 +11,9 @@ This project is dedicated to build and deploy a reccommendation system which wil
 Data Understanding
 This project will utilize the messages.csv, and categories.csv data files provided by Appen for its analysis.
 
+
 Analytical Process
+
 Two types of models are available to classify the messages. This project utilized Python 3 with libraries of numpy, pandas, sqlalchemy, re, NLTK, pickle, Sklearn, plotly and flask libraries.
 1. The first model type is an Adaboost Classifier utilizing Tfidf vectorizer to transform the messages.
 2. The second model type that is used for this project is a Random Forest Classifier to transform and classify the messages.
@@ -35,4 +37,11 @@ In order to run and implement this model. Belowmentioned scripts must be ran thr
  
  - To run and generate web app
  ` python run.py
+ 
+ 
+ Model Evaluation
+ Adaboost Classification and Random Forest Classification Models were evaluated on train and test data and precision, f1 , accuracy, and support was evaluated for individual message categories. Overall Accuracy scores for both the models was also evaluated for final model selection.
+ 
+ Model Selection
+ Random Forest Classification model with MultiOutputClassifier prodiced the best accuracy score and thus was selected for Disaster Response Pipeline Project. 
  
