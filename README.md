@@ -1,9 +1,8 @@
-                                Disaster Response Pipeline Project
+                                                               Disaster Response Pipeline Project
 
-                                        Introduction
+  Introduction
                                         
 This project will be working towards understanding the patterns received in disaster data received by Appen (formerly knows as figure 8). Appen providies advance Artificial Intelligence and Machine Learning solutions to its clients. Appen provides services ranging from Data Collection accross a variety of data types such as speech,text, image , video etc., Data Preparation, Model Development and Model Evaluation by both automation and human process. Other services such as Ads Evaluation, Web page evaulation, Catalog-Taxonomy,Related search Content Moderation, and Geo Location Evaluation are some of the other services provided by Appen to its clients to name the few.
-
 
 
 Scope of the project
@@ -12,10 +11,10 @@ This project is dedicated to build and deploy a reccommendation system which wil
 Data Understanding
 This project will utilize the messages.csv, and categories.csv data files provided by Appen for its analysis.
 
+Analytical Process
 Two types of models are available to classify the messages. This project utilized Python 3 with libraries of numpy, pandas, sqlalchemy, re, NLTK, pickle, Sklearn, plotly and flask libraries.
 1. The first model type is an Adaboost Classifier utilizing Tfidf vectorizer to transform the messages.
 2. The second model type that is used for this project is a Random Forest Classifier to transform and classify the messages.
-
 
 
 
