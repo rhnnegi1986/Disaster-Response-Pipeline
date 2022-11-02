@@ -40,8 +40,10 @@ In order to run and implement this model. Belowmentioned scripts must be ran thr
  
  
  Model Evaluation
+ 
  Adaboost Classification and Random Forest Classification Models were evaluated on train and test data and precision, f1 , accuracy, and support was evaluated for individual message categories. Overall Accuracy scores for both the models was also evaluated for final model selection.
  
  Model Selection
+ 
  Random Forest Classification model with MultiOutputClassifier prodiced the best accuracy score and thus was selected for Disaster Response Pipeline Project. 
  
