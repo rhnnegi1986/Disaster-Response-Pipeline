@@ -1,16 +1,17 @@
 import json
 import plotly
 import pandas as pd
-
+import dill as pickle
+import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-
+import re
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
-
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
+
 
 
 app = Flask(__name__)
@@ -31,7 +32,7 @@ engine = create_engine('sqlite:///../data/DisasterResponse.db')
 df = pd.read_sql_table('DisasterResponseMessages', engine)
 
 # load model
-model = joblib.load("../models/classifier.pkl")
+model = pickle.load(open('../models/classifier.pkl','rb'))
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -41,12 +42,12 @@ def index():
     
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
-    percent_gen = round(100 * genre_counts/gen_counts.sum(),2)
-    genre_names = list(genre_counts.index)
-    number_of_categories = df.drop(['id', 'message', 'original', 'genre'], axis = 1).sum()
-    number_of_categories = number_of_categories.sort_values(ascending = False)
-    Total_Categories = list(number_of_categories.index)
+    gen_counts = df.groupby('genre').count()['message']
+    percent_gen = round(100 * gen_counts/gen_counts.sum(),2)
+    genre_names = list(gen_counts.index)
+    num_of_categories = df.drop(['id', 'message', 'genre'], axis = 1).sum()
+    num_of_categories = num_of_categories.sort_values(ascending = False)
+    Total_Categories = list(num_of_categories.index)
 
     colors = ['blue', 'red', 'green']
     
@@ -72,7 +73,7 @@ def index():
                  "textinfo": "label+value",
                  "hoverinfo": "all",
                  "labels": genre_names,
-                 "values": genre_counts
+                 "values": gen_counts
                 }
             ],
             "layout" :{
@@ -84,7 +85,7 @@ def index():
                 {
                 "type": "bar",
                     "x" : Total_Categories,
-                    "y": number_of_Categories,
+                    "y": num_of_categories,
                     "marker":{
                         "color": 'brown'}
                 }
@@ -102,6 +103,7 @@ def index():
             }
         }
     ]
+    
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
@@ -131,7 +133,6 @@ def go():
 
 def main():
     app.run(host='0.0.0.0', port=3000, debug=True)
-
 
 if __name__ == '__main__':
     main()
