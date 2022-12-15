@@ -2,10 +2,11 @@
 
   Introduction
                                         
-This project will be working towards understanding the patterns received in disaster data received by Appen (formerly knows as figure 8). Appen providies advance Artificial Intelligence and Machine Learning solutions to its clients. Appen provides services ranging from Data Collection accross a variety of data types such as speech,text, image , video etc., Data Preparation, Model Development and Model Evaluation by both automation and human process. Other services such as Ads Evaluation, Web page evaulation, Catalog-Taxonomy,Related search Content Moderation, and Geo Location Evaluation are some of the other services provided by Appen to its clients to name the few.
+This project will be working towards understanding the patterns received in disaster data received by Appen (formerly known as figure 8). Appen providies advance Artificial Intelligence and Machine Learning solutions to its clients. Appen provides services ranging from Data Collection accross a variety of data types such as speech,text, image , video etc., Data Preparation, Model Development and Model Evaluation by both automation and human process. Other services such as Ads Evaluation, Web page evaulation, Catalog-Taxonomy,Related search Content Moderation, and Geo Location Evaluation are some of the other services provided by Appen to its clients to name the few.
 
 
 Scope of the project
+
 This project is dedicated to build and deploy a reccommendation system which will classify disaster response messages into various categories. The reccommendation system will them assign these classified messeges to the apppropriate disaster management response department for its timely and effective resolution.This project is using data from Figure Eight to create a disaster response pipeline. In order to achieve that, an ETL pipeline was built first to clean and transfer the data. Then a Machine Learning pipeline was created for model building. Lastly, I also created a web app, which including different visualization and message classifier. The message classifier can classify any messages that you typed in. 
 
 Data Understanding
@@ -45,5 +46,5 @@ In order to run and implement this model. Belowmentioned scripts must be ran thr
  
  Model Selection
  
- Random Forest Classification model with MultiOutputClassifier prodiced the best accuracy score and thus was selected for Disaster Response Pipeline Project. 
+ Random Forest Classification model with MultiOutputClassifier produced the best accuracy score and thus was selected for Disaster Response Pipeline Project. 
  
